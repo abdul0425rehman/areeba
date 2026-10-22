@@ -1,397 +1,671 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Abdul Rehman &amp; Areeba — Wedding Invitation</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-<style>
-/* ===== EDIT THESE IN THE CONFIG SCRIPT AT THE BOTTOM ===== */
-:root{
-  --rose:#d9a3a6; --rose-d:#b9777b; --wine:#8a3b32; --cream:#f7eeee; --ink:#4a2a2a;
-  --gold:#d4a24c; --navy:#101a33;
-}
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html,body{height:100%}
-body{font-family:'Cormorant Garamond',serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
-body.locked{overflow:hidden;height:100vh}
-.script{font-family:'Great Vibes',cursive}
-.ar{font-family:'Amiri',serif;direction:rtl}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barat Invitation | Areeba & Abdul Rehman</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@600;700;900&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-/* ---------- DOORS (opening screen) ---------- */
-#envelope{position:fixed;inset:0;z-index:100;overflow:hidden;background:#04110e;transition:opacity .8s 1.5s,visibility 0s 2.3s}
-#envelope.open{opacity:0;visibility:hidden}
-.door{position:absolute;top:0;bottom:0;width:50%;z-index:2;transition:transform 1.5s cubic-bezier(.7,0,.2,1);
-  background:
-   radial-gradient(circle at 50% 50%,transparent 0 38%,rgba(0,0,0,.25) 100%),
-   conic-gradient(from 45deg at 50% 50%,#0b3d33 0 25%,#0e4a3e 0 50%,#0b3d33 0 75%,#0e4a3e 0) 0 0/46px 46px;
-  box-shadow:inset 0 0 0 3px #d4a24c,inset 0 0 0 10px #0a2e27,inset 0 0 0 12px rgba(212,162,76,.6)}
-.door::before{content:"";position:absolute;inset:7%;border:1.5px solid rgba(212,162,76,.7);
-  background:repeating-linear-gradient(45deg,transparent 0 14px,rgba(212,162,76,.08) 14px 15px),
-             repeating-linear-gradient(-45deg,transparent 0 14px,rgba(212,162,76,.08) 14px 15px)}
-.door.l{left:0;transform-origin:left;border-right:2px solid #d4a24c}
-.door.r{right:0;transform-origin:right;border-left:2px solid #d4a24c}
-#envelope.go .door.l{transform:perspective(1200px) rotateY(-100deg)}
-#envelope.go .door.r{transform:perspective(1200px) rotateY(100deg)}
-.glow{position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 50% 50%,#ffe9b0,#e9a85f 35%,#1a2644 80%);opacity:0;transition:opacity 1.2s}
-#envelope.go .glow{opacity:1}
-.medal{position:absolute;left:50%;top:50%;z-index:4;width:min(66vw,280px);aspect-ratio:1;transform:translate(-50%,-50%);cursor:pointer;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#f6dfa0;
-  border-radius:50%;background:radial-gradient(circle,#0a3a31 0 62%,#0d4a3e);
-  box-shadow:0 0 0 3px #d4a24c,0 0 0 10px #072a23,0 0 0 12px #d4a24c,0 0 50px rgba(212,162,76,.45);
-  transition:transform .8s,opacity .6s;animation:breathe 2.4s infinite}
-.medal::before{content:"";position:absolute;inset:10px;border-radius:50%;border:1.5px dashed rgba(212,162,76,.7)}
-.medal .cres{font-size:2.6rem;line-height:1;color:#d4a24c}
-.medal .ar{font-size:1.15rem;margin:2px 0 6px}
-.medal .mn{font-family:'Great Vibes';font-size:2.1rem;line-height:1.1;color:#fff1c9}
-.medal .tp{margin-top:10px;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:#d4a24c;animation:blink 1.6s infinite}
-#envelope.go .medal{transform:translate(-50%,-50%) scale(.2);opacity:0;animation:none}
-@keyframes breathe{50%{box-shadow:0 0 0 3px #d4a24c,0 0 0 10px #072a23,0 0 0 12px #d4a24c,0 0 80px rgba(212,162,76,.8)}}
-@keyframes blink{50%{opacity:.35}}
-.burst{display:none}
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            maroon: {
+              800: '#58111A',
+              900: '#4A0E17',
+              950: '#2D080D',
+            },
+            gold: {
+              100: '#FFF8E7',
+              200: '#F7E7B4',
+              300: '#E6C687',
+              400: '#D4AF37',
+              500: '#C59B27',
+              600: '#997519',
+            },
+            cream: '#FAF6F0',
+          },
+          fontFamily: {
+            amiri: ['Amiri', 'serif'],
+            cinzel: ['Cinzel Decorative', 'serif'],
+            greatvibes: ['Great Vibes', 'cursive'],
+            playfair: ['Playfair Display', 'serif'],
+            sans: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 
-/* ---------- HERO ---------- */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:40px 20px 80px;overflow:hidden;color:var(--ink);
-  background:radial-gradient(circle at 50% 0,#fffaf0,#f6ead9 60%,#efdcc6)}
-.hero::before{content:"";position:absolute;inset:0;opacity:.5;
-  background:conic-gradient(from 45deg at 50% 50%,transparent 0 25%,rgba(212,162,76,.12) 0 50%,transparent 0 75%,rgba(212,162,76,.12) 0) 0 0/54px 54px}
-.hero>*{position:relative;z-index:2}
-.bismillah{font-size:clamp(1.8rem,8vw,2.4rem);line-height:1.6;color:#0b3d33;margin-bottom:14px}
-.window{width:min(86vw,360px);padding:46px 22px 40px;border-radius:999px 999px 18px 18px;
-  background:linear-gradient(#0b3d33,#0e4a3e);color:#f6dfa0;
-  box-shadow:0 0 0 3px #d4a24c,0 0 0 9px #f6ead9,0 0 0 11px #d4a24c,0 24px 50px rgba(11,61,51,.35);margin-bottom:34px}
-.window .orn{color:#d4a24c;font-size:1.3rem;letter-spacing:.5em}
-.verse{font-size:clamp(2rem,9vw,2.7rem);line-height:1.8;color:#fff1c9;margin:10px 0 4px}
-.verse-ref{font-size:.78rem;letter-spacing:.18em;color:#e9c776;line-height:1.7}
-.honored{font-size:1.05rem;font-style:italic;max-width:290px;margin:0 auto 10px;color:#6b4a3a}
-.name{font-family:'Great Vibes';font-size:clamp(3rem,15vw,4.4rem);line-height:1.05;color:#0b3d33}
-.amp{font-family:'Great Vibes';font-size:2rem;color:#b9777b;margin:2px 0}
-.hero .dt{margin-top:16px;letter-spacing:.3em;font-size:.85rem;color:#8a3b32;text-transform:uppercase}
-.scroll{position:absolute;bottom:20px;left:0;right:0;letter-spacing:.4em;font-size:.7rem;color:#8a3b32;animation:blink 2s infinite;z-index:2}
+  <style>
+    /* Custom Styling for Royal Aesthetic */
+    body {
+      background-color: #2D080D;
+      color: #FAF6F0;
+      overflow-x: hidden;
+    }
 
-/* ---------- SECTIONS ---------- */
-section.sec{padding:70px 24px;text-align:center;max-width:560px;margin:0 auto}
-.sec h2{font-family:'Great Vibes';font-weight:400;font-size:2.5rem;color:var(--wine);margin-bottom:6px}
-.divider{color:var(--rose-d);margin-bottom:26px;font-size:.9rem}
-.light{background:linear-gradient(#f7eeee,#efe1e3)}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s,transform .9s}
-.reveal.in{opacity:1;transform:none}
+    /* Curtains Animation */
+    .curtain-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 100;
+      display: flex;
+      pointer-events: auto;
+      transition: visibility 1.2s ease-in-out;
+    }
+    
+    .curtain-left, .curtain-right {
+      width: 50vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #4A0E17 0%, #681521 50%, #32070C 100%);
+      box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+      position: relative;
+      transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
+      display: flex;
+      align-items: center;
+    }
 
-/* scratch */
-.scratchwrap{position:relative;width:min(78vw,320px);aspect-ratio:1/.92;margin:20px auto 0}
-.scratchwrap .under,.scratchwrap canvas{position:absolute;inset:0;width:100%;height:100%}
-.under{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18% 16% 10%;
-  clip-path:path('M0 0');}
-.heartshape{clip-path:url(#heartclip)}
-.scratchwrap{ -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'><path d='M50 90C-30 40 10-5 50 25 90-5 130 40 50 90Z' fill='black'/></svg>") center/100% 100% no-repeat;
-  mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'><path d='M50 90C-30 40 10-5 50 25 90-5 130 40 50 90Z' fill='black'/></svg>") center/100% 100% no-repeat}
-.under{clip-path:none;background:#fff;color:var(--wine)}
-.under .inv{font-style:italic;font-size:1.1rem}
-.under .dt{font-family:'Playfair Display';font-size:1.35rem;font-weight:600;margin:4px 0}
-.under .dy{font-size:1rem;opacity:.85}
-canvas{touch-action:none;cursor:grab}
-.hint{margin-top:14px;font-size:.95rem;font-style:italic;color:var(--rose-d)}
+    .curtain-left {
+      border-right: 4px solid #D4AF37;
+      justify-content: flex-end;
+    }
 
-/* countdown */
-.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
-.cd div{background:#fff;border:1px solid #e6c9cc;border-radius:10px;padding:16px 4px;box-shadow:0 6px 16px rgba(138,59,50,.08)}
-.cd b{display:block;font-family:'Playfair Display';font-size:1.9rem;color:var(--wine)}
-.cd span{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-d)}
+    .curtain-right {
+      border-left: 4px solid #D4AF37;
+      justify-content: flex-start;
+    }
 
-/* timeline */
-.tl{text-align:left;position:relative;margin-top:10px;padding-left:28px}
-.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--rose),var(--wine))}
-.tl .ev{position:relative;margin-bottom:26px}
-.tl .ev::before{content:"";position:absolute;left:-27px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--wine);box-shadow:0 0 0 4px #f3dcde}
-.tl .ev.main::before{background:var(--gold);box-shadow:0 0 0 5px #f7e6bd}
-.tl h3{font-family:'Playfair Display';font-weight:600;font-size:1.25rem;color:var(--wine)}
-.tl .d{font-size:1rem;color:var(--rose-d);letter-spacing:.08em}
-.tl p{font-size:1rem;margin-top:2px}
+    .curtain-left::after, .curtain-right::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.25) 30px,
+        rgba(255, 255, 255, 0.05) 30px,
+        rgba(255, 255, 255, 0.05) 60px
+      );
+    }
 
-/* venue */
-.card{background:#fff;border:1px solid #ead2d4;border-radius:14px;padding:26px 20px;box-shadow:0 10px 26px rgba(138,59,50,.1)}
-.card h3{font-family:'Playfair Display';font-size:1.35rem;color:var(--wine);margin-bottom:6px}
-.card p{font-size:1.05rem;margin-bottom:4px}
-.calrow{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid #ead2d4;border-radius:10px;padding:12px 14px;margin-bottom:10px;text-align:left}
-.calrow b{font-family:'Playfair Display';color:var(--wine);display:block}.calrow small{color:var(--rose-d);font-size:.95rem}
-.calrow button{background:none;border:1px solid var(--wine);color:var(--wine);border-radius:6px;padding:7px 12px;font:600 .9rem 'Cormorant Garamond';cursor:pointer}
-.btn{display:inline-block;margin-top:16px;background:var(--wine);color:#fff;text-decoration:none;border:0;cursor:pointer;
-  padding:13px 26px;border-radius:6px;font:600 1rem 'Cormorant Garamond';letter-spacing:.08em;box-shadow:0 6px 14px rgba(138,59,50,.3)}
-.map{margin-top:18px;width:100%;height:220px;border:0;border-radius:12px;filter:saturate(.8)}
+    .curtain-open .curtain-left {
+      transform: translateX(-100%);
+    }
 
-/* form */
-form{text-align:left}
-label{display:block;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rose-d);margin:14px 0 4px}
-input,select,textarea{width:100%;padding:12px;border:1px solid #e1c3c6;border-radius:6px;background:#fff;font:1.05rem 'Cormorant Garamond';color:var(--ink)}
-textarea{min-height:90px;resize:vertical}
-form .btn{width:100%;margin-top:20px}
-footer{padding:50px 24px 70px;text-align:center;background:var(--wine);color:#f5dede}
-footer .script{font-size:2.4rem}
-footer p{opacity:.8;margin-top:6px}
+    .curtain-open .curtain-right {
+      transform: translateX(100%);
+    }
 
-.petal{position:fixed;top:-20px;z-index:50;pointer-events:none;width:10px;height:10px;border-radius:50% 0 50% 50%;background:var(--rose);opacity:.8;animation:fall linear forwards}
-@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
-</style>
+    .curtain-open {
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    /* Petals Animation Canvas */
+    #petal-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 50;
+    }
+
+    .gold-text-gradient {
+      background: linear-gradient(135deg, #FFF8E7 0%, #F7E7B4 40%, #D4AF37 70%, #E6C687 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Islamic Arch Shape */
+    .arch-card {
+      background: radial-gradient(circle, #58111A 0%, #3D0A11 100%);
+      border-radius: 200px 200px 16px 16px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.15);
+      position: relative;
+    }
+
+    /* Lantern Glow */
+    .lantern-glow {
+      filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6));
+      animation: swing 3s ease-in-out infinite alternate;
+      transform-origin: top center;
+    }
+
+    @keyframes swing {
+      0% { transform: rotate(-3deg); }
+      100% { transform: rotate(3deg); }
+    }
+  </style>
 </head>
-<body class="locked">
+<body class="min-h-screen relative flex flex-col items-center justify-between">
 
-<!-- ===== ENVELOPE ===== -->
-<div id="envelope">
-  <div class="glow"></div>
-  <div class="door l"></div>
-  <div class="door r"></div>
-  <div class="medal" id="seal">
-    <div class="cres">☪</div>
-    <div class="ar">دعوة زفاف</div>
-    <div class="mn" id="sealText"></div>
-    <div class="tp">Tap to open</div>
-  </div>
-</div>
-<div class="burst" id="burst"></div>
+  <!-- Floating Falling Petals Canvas -->
+  <canvas id="petal-canvas"></canvas>
 
-<!-- ===== HERO ===== -->
-<header class="hero">
-  <div class="bismillah ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
-  <div class="window">
-    <div class="orn">✦ ✦ ✦</div>
-    <div class="verse ar">وَخَلَقْنَاكُمْ أَزْوَاجًا</div>
-    <div class="verse-ref">“And We created you in pairs.”<br>SURAH AN-NABA · 78:8</div>
-  </div>
-  <div class="honored">We are honored to welcome you to the Wedding ceremony of</div>
-  <div class="name" id="groom"></div>
-  <div class="amp">&amp;</div>
-  <div class="name" id="bride"></div>
-  <div class="dt" id="heroDate"></div>
-  <div class="scroll">SCROLL ⌄</div>
-</header>
-
-<!-- ===== SCRATCH ===== -->
-<section class="sec light reveal" style="max-width:none">
-  <div style="max-width:560px;margin:auto">
-    <h2>Scratch to Reveal</h2>
-    <div class="divider">♥</div>
-    <div class="scratchwrap" id="sw">
-      <div class="under">
-        <div class="inv">You're invited!</div>
-        <div class="dt" id="revDate"></div>
-        <div class="dy" id="revSub"></div>
+  <!-- Interactive Curtain Opening Overlay -->
+  <div id="curtain-overlay" class="curtain-container">
+    <div class="curtain-left">
+      <div class="z-10 mr-4 sm:mr-8 text-center hidden sm:block">
+        <div class="w-16 h-16 rounded-full border-2 border-gold-400/60 flex items-center justify-center mx-auto mb-2 bg-maroon-900/80">
+          <span class="font-cinzel text-2xl text-gold-300">A</span>
+        </div>
       </div>
-      <canvas id="scratch"></canvas>
     </div>
-    <div class="hint" id="hint">Scratch the heart with your finger ♡</div>
+    <div class="curtain-right">
+      <div class="z-10 ml-4 sm:ml-8 text-center hidden sm:block">
+        <div class="w-16 h-16 rounded-full border-2 border-gold-400/60 flex items-center justify-center mx-auto mb-2 bg-maroon-900/80">
+          <span class="font-cinzel text-2xl text-gold-300">AR</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Opening Button -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center z-20 px-4">
+      <div class="bg-maroon-950/90 border-2 border-gold-400 p-8 sm:p-10 rounded-2xl text-center shadow-2xl max-w-md backdrop-blur-md transform transition hover:scale-105 duration-300">
+        <div class="font-amiri text-2xl text-gold-300 mb-2">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+        <p class="text-xs uppercase tracking-widest text-gold-200/80 mb-2">Wedding Invitation</p>
+        <h1 class="font-cinzel text-2xl sm:text-3xl font-bold text-gold-300 mb-4 tracking-wide">Areeba & Abdul Rehman</h1>
+        <p class="text-xs text-slate-300 mb-6 font-light">December 19, 2026 • Karachi, Pakistan</p>
+        
+        <button onclick="openInvitation()" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 text-maroon-950 font-bold uppercase tracking-wider text-xs shadow-lg hover:brightness-110 active:scale-95 transition flex items-center justify-center gap-2">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <span>Open Invitation</span>
+        </button>
+      </div>
+    </div>
   </div>
-</section>
 
-<!-- ===== COUNTDOWN ===== -->
-<section class="sec reveal">
-  <h2>Counting Down to Forever</h2>
-  <div class="divider">♥</div>
-  <div class="cd">
-    <div><b id="cdD">0</b><span>Days</span></div>
-    <div><b id="cdH">0</b><span>Hours</span></div>
-    <div><b id="cdM">0</b><span>Minutes</span></div>
-    <div><b id="cdS">0</b><span>Seconds</span></div>
+  <div class="w-full max-w-3xl mx-auto px-3 sm:px-6 py-8 sm:py-12 z-10 space-y-12">
+
+    <!-- INVITATION MAIN CARD -->
+    <div class="arch-card p-4 sm:p-10 border-2 border-gold-400/50 text-center relative overflow-hidden">
+      
+      <!-- Hanging Lanterns (Fanoos) Illustration Left & Right -->
+      <div class="absolute top-0 left-4 sm:left-10 lantern-glow">
+        <svg class="w-10 h-24 sm:w-14 sm:h-36 text-gold-400" viewBox="0 0 100 200" fill="none" stroke="currentColor">
+          <line x1="50" y1="0" x2="50" y2="80" stroke-width="2" stroke-dasharray="3,3"/>
+          <path d="M30 80 L70 80 L80 110 L50 140 L20 110 Z" fill="#D4AF37" fill-opacity="0.2" stroke-width="2"/>
+          <circle cx="50" cy="105" r="8" fill="#FFE89C"/>
+          <path d="M40 140 L50 160 L60 140" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <div class="absolute top-0 right-4 sm:right-10 lantern-glow" style="animation-delay: -1.5s;">
+        <svg class="w-10 h-24 sm:w-14 sm:h-36 text-gold-400" viewBox="0 0 100 200" fill="none" stroke="currentColor">
+          <line x1="50" y1="0" x2="50" y2="80" stroke-width="2" stroke-dasharray="3,3"/>
+          <path d="M30 80 L70 80 L80 110 L50 140 L20 110 Z" fill="#D4AF37" fill-opacity="0.2" stroke-width="2"/>
+          <circle cx="50" cy="105" r="8" fill="#FFE89C"/>
+          <path d="M40 140 L50 160 L60 140" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <!-- Bismillah Section -->
+      <div class="pt-12 sm:pt-16 mb-6">
+        <div class="font-amiri text-3xl sm:text-4xl text-gold-300 font-bold leading-relaxed tracking-wide">
+          بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+        </div>
+        <p class="text-[10px] sm:text-xs text-gold-200/70 tracking-widest uppercase mt-1">In the name of Allah, the Most Gracious, the Most Merciful</p>
+      </div>
+
+      <!-- Quranic Verse (Surah An-Nahl 16:72) -->
+      <div class="max-w-xl mx-auto bg-maroon-950/60 border border-gold-400/30 p-4 sm:p-5 rounded-2xl mb-8 backdrop-blur-sm">
+        <p class="font-amiri text-lg sm:text-xl text-gold-200 leading-loose text-center mb-2">
+          "وَٱللَّهُ جَعَلَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجً۬ا"
+        </p>
+        <p class="text-xs sm:text-sm text-cream/90 italic font-playfair font-light leading-relaxed">
+          "And Allah has created for you mates from among yourselves..."
+        </p>
+        <p class="text-[10px] text-gold-400 mt-2 font-mono uppercase tracking-wider">— Surah An-Nahl [16:72]</p>
+      </div>
+
+      <!-- Invitation Heading -->
+      <div class="space-y-2 mb-8">
+        <p class="text-xs sm:text-sm uppercase tracking-widest text-gold-300/90 font-medium">
+          Together with their families
+        </p>
+        <p class="text-xs sm:text-sm text-slate-300 max-w-md mx-auto font-light leading-relaxed">
+          request the honor of your presence and blessings on the joyous occasion of the <span class="text-gold-300 font-semibold">Barat Ceremony</span> of their beloved children
+        </p>
+      </div>
+
+      <div class="py-8 border-y border-gold-400/30 my-6 relative">
+        <div class="space-y-6">
+          <!-- Bride Name First with clear capitalized 'A' in Cinzel Decorative font -->
+          <div>
+            <h2 class="font-cinzel text-4xl sm:text-6xl font-bold gold-text-gradient drop-shadow-md py-1 tracking-wider uppercase">
+              Areeba Younus
+            </h2>
+            <p class="text-xs sm:text-sm text-gold-200/80 font-playfair mt-1">
+              Daughter of <span class="text-cream font-medium">Muhammad Younus (Late)</span>
+            </p>
+          </div>
+
+          <!-- & Symbol -->
+          <div class="flex items-center justify-center gap-4 my-2">
+            <div class="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent via-gold-400 to-transparent"></div>
+            <span class="font-cinzel text-xl text-gold-300 font-bold italic">&</span>
+            <div class="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent via-gold-400 to-transparent"></div>
+          </div>
+
+          <!-- Groom Name with clear capitalized 'A' in Cinzel Decorative font -->
+          <div>
+            <h2 class="font-cinzel text-4xl sm:text-6xl font-bold gold-text-gradient drop-shadow-md py-1 tracking-wider uppercase">
+              Abdul Rehman
+            </h2>
+            <p class="text-xs sm:text-sm text-gold-200/80 font-playfair mt-1">
+              Son of <span class="text-cream font-medium">Muhammad Sarwar</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Couple Back View Silhouette Illustration -->
+      <div class="my-8 flex justify-center">
+        <div class="relative p-6 bg-gradient-to-b from-maroon-900/40 to-maroon-950/80 rounded-2xl border border-gold-400/20 max-w-md w-full text-center">
+          <svg class="w-48 h-40 mx-auto text-gold-400/90" viewBox="0 0 200 160" fill="none">
+            <circle cx="100" cy="80" r="60" fill="url(#halo-grad)" opacity="0.4"/>
+            <defs>
+              <radialGradient id="halo-grad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FFE89C"/>
+                <stop offset="100%" stop-color="#58111A" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Groom -->
+            <g transform="translate(10, 0)">
+              <path d="M100 45 C100 30, 120 30, 120 45 C120 52, 100 52, 100 45 Z" fill="#D4AF37"/>
+              <path d="M108 25 L112 35 L104 35 Z" fill="#FFE89C"/>
+              <path d="M85 80 C85 55, 135 55, 135 80 L140 140 L80 140 Z" fill="#4A0E17" stroke="#D4AF37" stroke-width="1.5"/>
+              <path d="M110 55 L110 130" stroke="#FFE89C" stroke-width="2" stroke-dasharray="2,2"/>
+            </g>
+
+            <!-- Bride -->
+            <g transform="translate(-10, 0)">
+              <circle cx="75" cy="50" r="14" fill="#2D080D"/>
+              <path d="M50 55 C50 35, 100 35, 100 55 C105 85, 100 130, 45 135 C40 110, 45 80, 50 55 Z" fill="#681521" stroke="#D4AF37" stroke-width="1.5"/>
+              <path d="M52 55 Q 75 40 98 55" stroke="#FFE89C" stroke-width="2"/>
+              <circle cx="60" cy="70" r="1.5" fill="#FFE89C"/>
+              <circle cx="75" cy="75" r="1.5" fill="#FFE89C"/>
+              <circle cx="85" cy="85" r="1.5" fill="#FFE89C"/>
+              <circle cx="65" cy="95" r="1.5" fill="#FFE89C"/>
+              <circle cx="80" cy="110" r="1.5" fill="#FFE89C"/>
+            </g>
+          </svg>
+          <p class="text-[11px] text-gold-300 font-playfair italic mt-2">
+            "A match made in Heaven, celebrated with love."
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-6 my-8">
+        <!-- Date Badge -->
+        <div class="inline-block bg-gradient-to-r from-gold-600/20 via-gold-400/30 to-gold-600/20 border border-gold-400/60 px-6 py-3 rounded-full">
+          <p class="text-xs uppercase tracking-widest text-gold-300 font-semibold">
+            Saturday • December 19, 2026
+          </p>
+        </div>
+
+        <!-- Schedule Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto text-center sm:text-left">
+          <div class="bg-maroon-950/80 border border-gold-400/30 p-3.5 rounded-xl flex items-center justify-center sm:justify-start space-x-3">
+            <div class="p-2 bg-gold-400/10 text-gold-300 rounded-lg border border-gold-400/30">
+              <i data-lucide="users" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-wider text-slate-400">Barat Arrival</p>
+              <p class="text-xs font-bold text-gold-200">02:00 PM</p>
+            </div>
+          </div>
+
+          <div class="bg-maroon-950/80 border border-gold-400/30 p-3.5 rounded-xl flex items-center justify-center sm:justify-start space-x-3">
+            <div class="p-2 bg-gold-400/10 text-gold-300 rounded-lg border border-gold-400/30">
+              <i data-lucide="utensils" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-wider text-slate-400">Dinner</p>
+              <p class="text-xs font-bold text-gold-200">03:00 PM</p>
+            </div>
+          </div>
+
+          <div class="bg-maroon-950/80 border border-gold-400/30 p-3.5 rounded-xl flex items-center justify-center sm:justify-start space-x-3">
+            <div class="p-2 bg-gold-400/10 text-gold-300 rounded-lg border border-gold-400/30">
+              <i data-lucide="heart" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-wider text-slate-400">Rukhsati</p>
+              <p class="text-xs font-bold text-gold-200">04:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Venue Details -->
+      <div class="my-8 pt-6 border-t border-gold-400/30 space-y-4">
+        <div class="flex items-center justify-center gap-2 text-gold-300">
+          <i data-lucide="map-pin" class="w-5 h-5"></i>
+          <h3 class="font-cinzel font-bold text-base tracking-wider uppercase">Venue Details</h3>
+        </div>
+
+        <div class="space-y-1">
+          <h4 class="text-xl font-bold text-cream font-playfair">THE CONTINENTAL LUXURY BANQUET</h4>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
+            New Rd Service Ln, Block 1 Gulistan-e-Johar, Karachi, Pakistan
+          </p>
+        </div>
+
+        <!-- Venue Navigation Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <a href="https://maps.google.com/?cid=16514436650925298534" target="_blank" class="px-5 py-2.5 rounded-xl bg-gold-400 hover:bg-gold-300 text-maroon-950 font-bold text-xs uppercase tracking-wider shadow-lg transition flex items-center gap-2">
+            <i data-lucide="navigation" class="w-4 h-4"></i>
+            <span>Get Directions (Google Maps)</span>
+          </a>
+
+          <button onclick="downloadCalendarEvent()" class="px-5 py-2.5 rounded-xl bg-maroon-950 border border-gold-400/60 hover:bg-maroon-900 text-gold-300 font-semibold text-xs uppercase tracking-wider transition flex items-center gap-2">
+            <i data-lucide="calendar-plus" class="w-4 h-4"></i>
+            <span>Add to Calendar</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Countdown Timer -->
+    <div class="bg-maroon-900/90 border-2 border-gold-400/60 rounded-2xl p-6 sm:p-8 text-center shadow-2xl relative">
+      <div class="flex items-center justify-center gap-2 mb-4 text-gold-300">
+        <i data-lucide="clock" class="w-5 h-5"></i>
+        <h3 class="font-cinzel text-sm uppercase tracking-widest font-bold">Countdown to Barat</h3>
+      </div>
+
+      <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto font-mono">
+        <div class="bg-maroon-950 border border-gold-400/30 p-2 sm:p-4 rounded-xl">
+          <span id="cd-days" class="text-2xl sm:text-4xl font-bold text-gold-300 block">00</span>
+          <span class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider">Days</span>
+        </div>
+        <div class="bg-maroon-950 border border-gold-400/30 p-2 sm:p-4 rounded-xl">
+          <span id="cd-hours" class="text-2xl sm:text-4xl font-bold text-gold-300 block">00</span>
+          <span class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider">Hours</span>
+        </div>
+        <div class="bg-maroon-950 border border-gold-400/30 p-2 sm:p-4 rounded-xl">
+          <span id="cd-minutes" class="text-2xl sm:text-4xl font-bold text-gold-300 block">00</span>
+          <span class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider">Mins</span>
+        </div>
+        <div class="bg-maroon-950 border border-gold-400/30 p-2 sm:p-4 rounded-xl">
+          <span id="cd-seconds" class="text-2xl sm:text-4xl font-bold text-gold-300 block">00</span>
+          <span class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider">Secs</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RSVP & AWAITING WELCOME CONTACTS SECTION -->
+    <div class="bg-maroon-900/90 border border-gold-400/50 rounded-2xl p-6 sm:p-8 text-center space-y-6 shadow-xl">
+      <div>
+        <h3 class="font-cinzel text-lg text-gold-300 font-bold uppercase tracking-widest mb-1">AWAITING WELCOME</h3>
+        <p class="text-xs text-slate-300">All Family Members</p>
+      </div>
+
+      <!-- Updated Grid with 3 Family Contact Person Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+        <!-- Contact 1: Zafar Iqbal -->
+        <div class="bg-maroon-950/90 border border-gold-400/30 p-4 rounded-xl text-left space-y-3 flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-cream">Zafar Iqbal</h4>
+            <p class="text-xs text-gold-300 font-mono mt-0.5">0331-1177865</p>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <a href="https://wa.me/923311177865?text=Salam%20Zafar!%20I%20am%20confirming%20my%20attendance%20for%20Areeba%20%26%20Abdul%20Rehman%27s%20Barat." target="_blank" class="flex-1 py-1.5 px-2 bg-green-700 hover:bg-green-600 text-white text-[11px] font-semibold rounded-lg text-center flex items-center justify-center gap-1 transition">
+              <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+            </a>
+            <a href="tel:+923311177865" class="py-1.5 px-2.5 bg-slate-800 hover:bg-slate-700 text-gold-300 text-[11px] font-semibold rounded-lg flex items-center justify-center transition">
+              <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact 2: M. Ibrahim -->
+        <div class="bg-maroon-950/90 border border-gold-400/30 p-4 rounded-xl text-left space-y-3 flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-cream">M. Ibrahim</h4>
+            <p class="text-xs text-gold-300 font-mono mt-0.5">0325-2968710</p>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <a href="https://wa.me/923252968710?text=Salam%20Ibrahim!%20I%20am%20confirming%20my%20attendance%20for%20Areeba%20%26%20Abdul%20Rehman%27s%20Barat." target="_blank" class="flex-1 py-1.5 px-2 bg-green-700 hover:bg-green-600 text-white text-[11px] font-semibold rounded-lg text-center flex items-center justify-center gap-1 transition">
+              <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+            </a>
+            <a href="tel:+923252968710" class="py-1.5 px-2.5 bg-slate-800 hover:bg-slate-700 text-gold-300 text-[11px] font-semibold rounded-lg flex items-center justify-center transition">
+              <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact 3: M. Haseeb (Newly Added) -->
+        <div class="bg-maroon-950/90 border border-gold-400/30 p-4 rounded-xl text-left space-y-3 flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-cream">M. Haseeb</h4>
+            <p class="text-xs text-gold-300 font-mono mt-0.5">0321-2721035</p>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <a href="https://wa.me/923212721035?text=Salam%20Haseeb!%20I%20am%20confirming%20my%20attendance%20for%20Areeba%20%26%20Abdul%20Rehman%27s%20Barat." target="_blank" class="flex-1 py-1.5 px-2 bg-green-700 hover:bg-green-600 text-white text-[11px] font-semibold rounded-lg text-center flex items-center justify-center gap-1 transition">
+              <i data-lucide="message-square" class="w-3.5 h-3.5"></i> WhatsApp
+            </a>
+            <a href="tel:+923212721035" class="py-1.5 px-2.5 bg-slate-800 hover:bg-slate-700 text-gold-300 text-[11px] font-semibold rounded-lg flex items-center justify-center transition">
+              <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Best Wishes Form -->
+    <div class="bg-maroon-900/90 border border-gold-400/50 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl">
+      <div class="text-center">
+        <h3 class="font-cinzel text-base text-gold-300 font-bold uppercase tracking-wider">Send Best Wishes & Dua</h3>
+        <p class="text-xs text-slate-300 mt-1">Leave your prayers for the couple</p>
+      </div>
+
+      <form id="wish-form" onsubmit="submitWish(event)" class="space-y-3">
+        <input type="text" id="guest-name" required placeholder="Your Name" class="w-full bg-maroon-950 border border-gold-400/30 rounded-xl px-4 py-2.5 text-xs text-cream placeholder-slate-500 focus:outline-none focus:border-gold-400">
+        <textarea id="guest-message" required rows="3" placeholder="Write your prayers and warm wishes..." class="w-full bg-maroon-950 border border-gold-400/30 rounded-xl px-4 py-2.5 text-xs text-cream placeholder-slate-500 focus:outline-none focus:border-gold-400"></textarea>
+        <button type="submit" class="w-full py-2.5 bg-gradient-to-r from-gold-600 to-gold-400 text-maroon-950 font-bold text-xs uppercase tracking-wider rounded-xl hover:brightness-110 transition flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Send Blessings</span>
+        </button>
+      </form>
+
+      <!-- Wishes Stream -->
+      <div id="wishes-list" class="space-y-3 pt-4 border-t border-gold-400/20 max-h-48 overflow-y-auto">
+        <div class="bg-maroon-950/60 p-3 rounded-lg border border-gold-400/20 text-xs">
+          <div class="flex justify-between text-gold-300 font-semibold mb-1">
+            <span>The Sarwar Family</span>
+            <span class="text-[10px] text-slate-400 font-mono">Warm Regards</span>
+          </div>
+          <p class="text-slate-200 italic font-playfair">"May Allah SWT bless this union with everlasting love, prosperity, and joy."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs text-slate-400 space-y-2 py-4">
+      <p class="font-cinzel text-xl text-gold-300 font-bold">Areeba & Abdul Rehman</p>
+      <p class="text-[10px] tracking-widest text-slate-500 uppercase">#AreebaWedsAbdulRehman • December 2026</p>
+    </footer>
+
   </div>
-</section>
 
-<!-- ===== TIMELINE ===== -->
-<section class="sec light reveal" style="max-width:none">
-  <div style="max-width:560px;margin:auto">
-    <h2>Wedding Events</h2>
-    <div class="divider">♥</div>
-    <div class="tl" id="tl"></div>
-  </div>
-</section>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
 
-<!-- ===== VENUE ===== -->
-<section class="sec reveal">
-  <h2>Venue</h2>
-  <div class="divider">♥</div>
-  <div class="card">
-    <h3 id="vName"></h3>
-    <p id="vArea"></p>
-    <p style="opacity:.7;font-size:.95rem" id="vCode"></p>
-    <a class="btn" id="mapBtn" target="_blank" rel="noopener">View on Google Maps</a>
-    <iframe class="map" id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-</section>
+    // Curtain Opening Logic
+    function openInvitation() {
+      const overlay = document.getElementById('curtain-overlay');
+      overlay.classList.add('curtain-open');
+      
+      // Start Petal Shower Animation
+      initPetals();
+    }
 
-<!-- ===== SAVE THE DATES ===== -->
-<section class="sec light reveal" style="max-width:none">
-  <div style="max-width:560px;margin:auto">
-    <h2>Save the Dates</h2>
-    <div class="divider">♥</div>
-    <p style="margin-bottom:16px">Add our celebrations to your calendar so you don't miss a single one.</p>
-    <div id="calList"></div>
-    <button class="btn" id="calAll" type="button">Add All Events</button>
-  </div>
-</section>
+    // Live Countdown Timer to Dec 19, 2026, 14:00 PKT (Barat Arrival)
+    const targetDate = new Date("2026-12-19T14:00:00+05:00").getTime();
 
-<!-- ===== MESSAGE ===== -->
-<section class="sec reveal">
-  <h2>Send a Message</h2>
-  <div class="divider">♥</div>
-  <form id="form">
-    <label>Your Name</label><input id="fName" required placeholder="Your full name">
-    <label>Will you be attending?</label>
-    <select id="fAtt"><option>Yes, with pleasure</option><option>Sorry, can't make it</option></select>
-    <label>Which events?</label><input id="fEv" placeholder="e.g. Mehndi, Baarat">
-    <label>Your Message</label><textarea id="fMsg" placeholder="Write your wishes…"></textarea>
-    <button class="btn" type="submit">Send via WhatsApp</button>
-  </form>
-</section>
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
 
-<footer>
-  <div class="script" id="fNames"></div>
-  <p>We can't wait to celebrate with you · December 2026</p>
-</footer>
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-<script>
-/* =====================================================
-   CONFIG — change everything here
-   ===================================================== */
-const CONFIG = {
-  groom: "Abdul Rehman",
-  bride: "Areeba",
-  year: 2026,
-  // Main wedding date (Baarat) — used for countdown & scratch card
-  weddingDate: "2026-12-19T19:00:00+05:00",   // change time if needed (19:00 = 7 PM)
-  weddingLabel: "19 December 2026",
-  weddingSub: "Saturday · Baarat",
-  events: [
-    { date:"13 December", name:"Milad",                    note:"" },
-    { date:"14 December", name:"Dholki",                   note:"" },
-    { date:"15 December", name:"Bridal Shower",            note:"" },
-    { date:"16 December", name:"Mayo & Mehndi Lagai",      note:"" },
-    { date:"17 December", name:"Mehndi",                   note:"" },
-    { date:"19 December", name:"Baarat",                   note:"Continental Banquet, Gulistan-e-Johar", main:true },
-  ],
-  venue: {
-    name: "Continental Banquet",
-    area: "Gulistan-e-Johar, Karachi",
-    plusCode: "W4G7+3R",
-  },
-  whatsapp: "923000000000"   // <-- put WhatsApp number with country code, no + or spaces
-};
+        document.getElementById("cd-days").innerText = String(days).padStart(2, '0');
+        document.getElementById("cd-hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("cd-minutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("cd-seconds").innerText = String(seconds).padStart(2, '0');
+      } else {
+        document.getElementById("cd-days").innerText = "00";
+        document.getElementById("cd-hours").innerText = "00";
+        document.getElementById("cd-minutes").innerText = "00";
+        document.getElementById("cd-seconds").innerText = "00";
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
 
-/* =====================================================
-   Setup
-   ===================================================== */
-const $ = id => document.getElementById(id);
-const initials = n => n.trim()[0];
-$('sealText').innerHTML = CONFIG.groom + '<br>&amp; ' + CONFIG.bride;
-$('groom').textContent = CONFIG.groom;
-$('bride').textContent = CONFIG.bride;
-$('fNames').textContent = CONFIG.groom + " & " + CONFIG.bride;
-$('heroDate').textContent = CONFIG.weddingLabel;
-$('revDate').textContent = CONFIG.weddingLabel;
-$('revSub').textContent = CONFIG.weddingSub;
-$('vName').textContent = CONFIG.venue.name;
-$('vArea').textContent = CONFIG.venue.area;
-$('vCode').textContent = "Plus Code: " + CONFIG.venue.plusCode;
-const q = encodeURIComponent(CONFIG.venue.plusCode + " " + CONFIG.venue.area);
-$('mapBtn').href = "https://www.google.com/maps/search/?api=1&query=" + q;
-$('mapFrame').src = "https://maps.google.com/maps?q=" + q + "&z=16&output=embed";
+    // Petal Canvas Effect (Rose & Jasmine Petals)
+    function initPetals() {
+      const canvas = document.getElementById('petal-canvas');
+      const ctx = canvas.getContext('2d');
 
-$('tl').innerHTML = CONFIG.events.map(e =>
-  `<div class="ev ${e.main?'main':''}"><h3>${e.name}</h3><div class="d">${e.date} ${CONFIG.year}</div>${e.note?`<p>${e.note}</p>`:''}</div>`).join('');
+      let width = canvas.width = window.innerWidth;
+      let height = canvas.height = window.innerHeight;
 
-/* Envelope */
-let opened = false;
-function openEnv(){
-  if(opened) return; opened = true;
-  $('envelope').classList.add('go');
-  setTimeout(()=>{ $('envelope').classList.add('open'); document.body.classList.remove('locked'); petals(26); }, 1500);
-}
-$('envelope').addEventListener('click', openEnv);
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
 
-/* Petals */
-function petals(n){
-  for(let i=0;i<n;i++){
-    const p=document.createElement('div'); p.className='petal';
-    p.style.left=Math.random()*100+'vw';
-    p.style.animationDuration=(4+Math.random()*4)+'s';
-    p.style.animationDelay=(Math.random()*2)+'s';
-    p.style.transform=`scale(${.6+Math.random()})`;
-    document.body.appendChild(p); setTimeout(()=>p.remove(),10000);
-  }
-}
+      const petalCount = 35;
+      const petals = [];
 
-/* Scroll reveal */
-const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); }),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+      class Petal {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height - height;
+          this.size = Math.random() * 8 + 6;
+          this.speedY = Math.random() * 1.5 + 0.8;
+          this.speedX = Math.random() * 1 - 0.5;
+          this.angle = Math.random() * 360;
+          this.spin = Math.random() * 2 - 1;
+          this.color = Math.random() > 0.3 ? '#E63946' : '#FFF8E7';
+        }
 
-/* Countdown */
-const target = new Date(CONFIG.weddingDate).getTime();
-function tick(){
-  let d = Math.max(0, target - Date.now());
-  const day = Math.floor(d/864e5); d%=864e5;
-  const h = Math.floor(d/36e5); d%=36e5;
-  const m = Math.floor(d/6e4); const s = Math.floor(d%6e4/1e3);
-  const pad = n => String(n).padStart(2,'0');
-  $('cdD').textContent=day; $('cdH').textContent=pad(h); $('cdM').textContent=pad(m); $('cdS').textContent=pad(s);
-}
-tick(); setInterval(tick,1000);
+        update() {
+          this.y += this.speedY;
+          this.x += Math.sin(this.y * 0.01) + this.speedX;
+          this.angle += this.spin;
 
-/* Scratch-to-reveal */
-(function(){
-  const c = $('scratch'), ctx = c.getContext('2d'), wrap = $('sw');
-  function size(){
-    const r = wrap.getBoundingClientRect(); const dpr = window.devicePixelRatio||1;
-    c.width = r.width*dpr; c.height = r.height*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
-    const g = ctx.createLinearGradient(0,0,r.width,r.height);
-    g.addColorStop(0,'#e6a7a2'); g.addColorStop(.5,'#c9807d'); g.addColorStop(1,'#e8b4a8');
-    ctx.fillStyle=g; ctx.fillRect(0,0,r.width,r.height);
-    for(let i=0;i<1400;i++){ ctx.fillStyle=`rgba(255,${200+Math.random()*55|0},${190+Math.random()*50|0},${Math.random()*.7})`;
-      ctx.fillRect(Math.random()*r.width,Math.random()*r.height,1.6,1.6); }
-  }
-  size(); addEventListener('resize',size);
-  let down=false, done=false;
-  function pos(e){ const r=c.getBoundingClientRect(); const t=e.touches?e.touches[0]:e; return [t.clientX-r.left,t.clientY-r.top]; }
-  function scratch(e){
-    if(!down||done) return; e.preventDefault();
-    const [x,y]=pos(e); ctx.globalCompositeOperation='destination-out';
-    ctx.beginPath(); ctx.arc(x,y,22,0,7); ctx.fill(); check();
-  }
-  let n=0;
-  function check(){
-    if(++n%8) return;
-    const d=ctx.getImageData(0,0,c.width,c.height).data; let clear=0,tot=0;
-    for(let i=3;i<d.length;i+=64){ tot++; if(d[i]===0) clear++; }
-    if(clear/tot>.5){ done=true; c.style.transition='opacity .8s'; c.style.opacity=0; $('hint').textContent='Our forever begins ♥'; petals(30); }
-  }
-  ['mousedown','touchstart'].forEach(ev=>c.addEventListener(ev,e=>{down=true;scratch(e)},{passive:false}));
-  ['mousemove','touchmove'].forEach(ev=>c.addEventListener(ev,scratch,{passive:false}));
-  ['mouseup','mouseleave','touchend'].forEach(ev=>c.addEventListener(ev,()=>down=false));
-})();
+          if (this.y > height) {
+            this.y = -20;
+            this.x = Math.random() * width;
+          }
+        }
 
+        draw() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate((this.angle * Math.PI) / 180);
+          ctx.beginPath();
+          ctx.ellipse(0, 0, this.size, this.size / 1.8, 0, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.globalAlpha = 0.75;
+          ctx.fill();
+          ctx.restore();
+        }
+      }
 
-/* Add to calendar (.ics) */
-const MONTHS={January:1,February:2,March:3,April:4,May:5,June:6,July:7,August:8,September:9,October:10,November:11,December:12};
-function icsEvent(e,i){
-  const [d,m]=e.date.split(' '); const dd=String(d).padStart(2,'0'), mm=String(MONTHS[m]).padStart(2,'0');
-  const day=`${CONFIG.year}${mm}${dd}`;
-  const nx=new Date(Date.UTC(CONFIG.year,MONTHS[m]-1,+d+1)); const end=nx.toISOString().slice(0,10).replace(/-/g,'');
-  return ['BEGIN:VEVENT',`UID:ev${i}-${day}@wedding`,`DTSTAMP:${day}T000000Z`,`DTSTART;VALUE=DATE:${day}`,`DTEND;VALUE=DATE:${end}`,
-    `SUMMARY:${e.name} - ${CONFIG.groom} & ${CONFIG.bride}`,`LOCATION:${e.main?CONFIG.venue.name+', '+CONFIG.venue.area:''}`,'END:VEVENT'].join('\r\n');
-}
-function download(list){
-  const body='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Wedding//EN\r\n'+list.map(icsEvent).join('\r\n')+'\r\nEND:VCALENDAR';
-  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([body],{type:'text/calendar'}));
-  a.download='wedding-events.ics'; document.body.appendChild(a); a.click(); a.remove();
-}
-$('calList').innerHTML=CONFIG.events.map((e,i)=>`<div class="calrow"><div><b>${e.name}</b><small>${e.date} ${CONFIG.year}</small></div><button type="button" data-i="${i}">+ Add</button></div>`).join('');
-$('calList').addEventListener('click',ev=>{const b=ev.target.closest('button'); if(b) download([CONFIG.events[b.dataset.i]]);});
-$('calAll').addEventListener('click',()=>download(CONFIG.events));
+      for (let i = 0; i < petalCount; i++) {
+        petals.push(new Petal());
+      }
 
-/* WhatsApp message */
-$('form').addEventListener('submit',e=>{
-  e.preventDefault();
-  const t = `Assalamu Alaikum! ${$('fName').value}\nAttending: ${$('fAtt').value}\nEvents: ${$('fEv').value}\n\n${$('fMsg').value}`;
-  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}`,'_blank');
-});
-</script>
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        petals.forEach(petal => {
+          petal.update();
+          petal.draw();
+        });
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+    // Save to Calendar (.ics Download)
+    function downloadCalendarEvent() {
+      const icsData = 
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Areeba & Abdul Rehman Barat//EN
+BEGIN:VEVENT
+SUMMARY:Barat Ceremony - Areeba & Abdul Rehman
+DESCRIPTION:Barat ceremony of Areeba & Abdul Rehman at The Continental Luxury Banquet, Karachi. Arrival: 02:00 PM, Dinner: 03:00 PM, Rukhsati: 04:00 PM.
+LOCATION:The Continental Luxury Banquet, New Rd Service Ln, Block 1 Gulistan-e-Johar, Karachi
+DTSTART:20261219T090000Z
+DTEND:20261219T120000Z
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+      const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'Areeba_AbdulRehman_Barat.ics');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // Guest Wishes Form Submission
+    function submitWish(event) {
+      event.preventDefault();
+      const name = document.getElementById('guest-name').value;
+      const message = document.getElementById('guest-message').value;
+
+      const wishesList = document.getElementById('wishes-list');
+      const newWish = document.createElement('div');
+      newWish.className = "bg-maroon-950/60 p-3 rounded-lg border border-gold-400/30 text-xs transition duration-300 animate-fade-in";
+      newWish.innerHTML = `
+        <div class="flex justify-between text-gold-300 font-semibold mb-1">
+          <span>${name}</span>
+          <span class="text-[10px] text-slate-400 font-mono">Just Now</span>
+        </div>
+        <p class="text-slate-200 italic font-playfair">"${message}"</p>
+      `;
+
+      wishesList.prepend(newWish);
+
+      // Reset form
+      document.getElementById('wish-form').reset();
+    }
+  </script>
 </body>
 </html>
